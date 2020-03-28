@@ -1,6 +1,5 @@
 from PIL import Image
 import numpy as np
-from midi2audio import FluidSynth
 from music21 import instrument, note, chord, stream
 
 lowerBoundNote = 21
@@ -75,8 +74,6 @@ def image2midi(image_path):
     midi_stream.write('midi', fp=image_path.split("/")[-1].replace(".png",".mid"))
 
 import sys
-#image_path = sys.argv[1] #image_path är pathen till png filen används genom python img2mid.py path
-#image2midi(image_path)
-image2midi('Images/alb_esp3_Piano_2.png')
-
-FluidSynth().play_midi('Images/alb_esp3_Piano_2.mid')
+image_path = sys.argv[1] #image_path är pathen till png filen används genom python img2mid.py path
+image2midi(image_path)
+#image2midi('Images/alb_esp3_Piano_2.png')
